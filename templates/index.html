@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Face Swap Demo | AtlantiHacks</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Pedro D'IA S</p>
+      <h1>Face booth</h1>
+      <p class="lede">Bring a photo, keep Pedro's face, and let the swapper assemble a new portrait in a few seconds.</p>
+    </header>
+
+    <main class="page">
+      <section class="panel source-panel">
+        <h2>Source face</h2>
+        <p>Pedro's portrait is baked into this demo and cannot be changed. Every upload will inherit his expression.</p>
+      </section>
+
+      <section class="panel upload-panel">
+        <h2>Choose a target photo</h2>
+        <p class="section-note">Select a still image or open your camera. Clear, front-lit faces give the most natural blend.</p>
+
+        <label for="target" class="file-drop">
+          <span class="file-title">Upload a photo</span>
+          <span class="file-sub">JPG or PNG · up to 10 MB</span>
+        </label>
+        <input type="file" id="target" accept="image/*" />
+
+        <div class="divider">or</div>
+
+        <button id="openCameraBtn" class="btn plain">Use your camera</button>
+
+        <div id="cameraContainer" class="camera-shell" style="display:none;">
+          <div class="camera-preview">
+            <video id="video" autoplay playsinline></video>
+          </div>
+          <div class="camera-actions">
+            <button id="captureBtn" class="btn solid">Capture</button>
+            <button id="closeCameraBtn" class="btn ghost">Close</button>
+          </div>
+          <p class="camera-hint">Camera access works on localhost or HTTPS. Keep the frame steady for a sharper grab.</p>
+        </div>
+
+        <ol class="checklist">
+          <li>Center the face and keep the background calm.</li>
+          <li>Upload only one person per shot for best alignment.</li>
+          <li>Press the swap button once and wait for the preview.</li>
+        </ol>
+      </section>
+
+      <section class="panel action-panel">
+        <button id="swapBtn" class="btn solid large">Create face swap</button>
+        <p class="muted">Processing happens on this computer. Give it a moment—large files may take a little longer.</p>
+      </section>
+
+      <section class="panel result-panel">
+        <div class="result-header">
+          <h2>Result</h2>
+          <button id="factBtn" class="btn ghost small">Need a fun fact?</button>
+        </div>
+        <div class="result-stage">
+          <img id="resultImg" alt="Result will appear here" />
+        </div>
+        <p id="factText" class="fact-line"></p>
+      </section>
+
+      <section class="panel footnote">
+        <h3>Before you share</h3>
+        <p>Use face swaps responsibly and ask for consent before posting photos of other people.</p>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

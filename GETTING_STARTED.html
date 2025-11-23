@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Swap - Getting Started</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.95; }
+        .content { padding: 40px 20px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { 
+            color: #667eea; 
+            font-size: 1.8em; 
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .step {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .step strong { color: #667eea; }
+        .code {
+            background: #222;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .success { 
+            background: #d4edda;
+            border-left-color: #28a745;
+            color: #155724;
+        }
+        .warning { 
+            background: #fff3cd;
+            border-left-color: #ffc107;
+            color: #856404;
+        }
+        .tip { 
+            background: #d1ecf1;
+            border-left-color: #17a2b8;
+            color: #0c5460;
+        }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .button { 
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .button:hover { 
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        .footer { 
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✨ Welcome to Face Swap!</h1>
+            <p>Transform your photos in just a few clicks</p>
+        </div>
+        
+        <div class="content">
+            <!-- Quick Start -->
+            <div class="section">
+                <h2>🚀 Quick Start (3 Steps)</h2>
+                
+                <div class="step success">
+                    <strong>Step 1: Start the Server</strong>
+                    <p style="margin-top: 10px;">Double-click <code>start.bat</code> (Windows) or run <code>start.ps1</code> (PowerShell)</p>
+                </div>
+
+                <div class="step success">
+                    <strong>Step 2: Open Your Browser</strong>
+                    <p style="margin-top: 10px;">Visit: <code>http://localhost:5000</code></p>
+                </div>
+
+                <div class="step success">
+                    <strong>Step 3: Swap Faces</strong>
+                    <p style="margin-top: 10px;">Upload a photo or use your camera, then click "✨ Swap Faces"</p>
+                </div>
+            </div>
+
+            <!-- First Time Setup -->
+            <div class="section">
+                <h2>⚙️ First Time Setup (If Needed)</h2>
+                
+                <div class="step">
+                    <strong>If you want to use Python manually:</strong>
+                    <div class="code">python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python app.py</div>
+                </div>
+
+                <div class="step tip">
+                    💡 <strong>Tip:</strong> Make sure you have a clear photo of a face saved as <code>static/source.png</code>. This is the face that will be swapped into your photos.
+                </div>
+            </div>
+
+            <!-- How to Use -->
+            <div class="section">
+                <h2>📸 How to Use the App</h2>
+                
+                <div class="step">
+                    <strong>Option 1: Upload a Photo</strong>
+                    <ul>
+                        <li>Click "Upload Photo"</li>
+                        <li>Select an image from your computer</li>
+                        <li>Click "✨ Swap Faces"</li>
+                        <li>Wait a few seconds for results</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <strong>Option 2: Use Your Camera</strong>
+                    <ul>
+                        <li>Click "📷 Use Camera"</li>
+                        <li>Allow camera permission (if prompted)</li>
+                        <li>Click "📷 Capture" to take a photo</li>
+                        <li>Click "✨ Swap Faces"</li>
+                    </ul>
+                </div>
+
+                <div class="step tip">
+                    💡 <strong>Best Results:</strong> Clear, front-facing photos with good lighting work best. Avoid blurry or angled photos for better face detection.
+                </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="section">
+                <h2>🔧 Troubleshooting</h2>
+
+                <div class="step warning">
+                    <strong>❓ Camera not working?</strong>
+                    <p>Make sure you're accessing via <code>http://localhost:5000</code> (not <code>file://</code>). Click "Allow" when prompted for camera permission.</p>
+                </div>
+
+                <div class="step warning">
+                    <strong>❓ Face swap failed?</strong>
+                    <p>Check that <code>static/source.png</code> exists. Try using a different target image—clear, front-facing photos work best.</p>
+                </div>
+
+                <div class="step warning">
+                    <strong>❓ Dependencies won't install?</strong>
+                    <p>Make sure you have 64-bit Python. If you get errors, try installing the Visual C++ Redistributable from Microsoft.</p>
+                </div>
+
+                <div class="step warning">
+                    <strong>❓ Server won't start?</strong>
+                    <p>Try running: <code>pip install -r requirements.txt</code> first, then <code>python app.py</code></p>
+                </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="section">
+                <h2>💡 Pro Tips</h2>
+
+                <div class="step">
+                    <strong>📸 Source Face (static/source.png)</strong>
+                    <ul>
+                        <li>Use a clear, front-facing photo</li>
+                        <li>Good lighting is important</li>
+                        <li>At least 300×300 pixels</li>
+                        <li>PNG or JPEG format</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <strong>📷 Target Photos</strong>
+                    <ul>
+                        <li>Works best with similar face angles</li>
+                        <li>Good lighting improves results</li>
+                        <li>Use 400–2000 pixels (largest side)</li>
+                        <li>Single face per photo (for best results)</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <strong>⚡ Performance</strong>
+                    <ul>
+                        <li>Face swapping takes 2-15 seconds per image</li>
+                        <li>Smaller images process faster</li>
+                        <li>CPU-intensive (normal behavior)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="section">
+                <h2>❓ FAQ</h2>
+
+                <div class="step">
+                    <strong>Q: Is my data secure?</strong>
+                    <p>A: All processing happens locally on your computer. No images are sent to external servers.</p>
+                </div>
+
+                <div class="step">
+                    <strong>Q: Can I change the source face?</strong>
+                    <p>A: Yes! Replace <code>static/source.png</code> with a new image, then restart the server.</p>
+                </div>
+
+                <div class="step">
+                    <strong>Q: Can I batch process multiple photos?</strong>
+                    <p>A: Currently, process one photo at a time. Upload or capture, swap, save result, then repeat.</p>
+                </div>
+
+                <div class="step">
+                    <strong>Q: What's the file size limit?</strong>
+                    <p>A: Keep images under 10 MB for best performance. Larger images process slower.</p>
+                </div>
+            </div>
+
+            <!-- Ready? -->
+            <div class="section" style="text-align: center;">
+                <h2>✨ Ready to Swap?</h2>
+                <p>Double-click <code>start.bat</code> or run the PowerShell script to begin!</p>
+                <p style="margin-top: 20px; color: #666; font-size: 0.9em;">
+                    For more details, see README.md or SETUP.md
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Face Swap Demo | Built with ❤️ for AtlantiHacks | 2025</p>
+        </div>
+    </div>
+</body>
+</html>
