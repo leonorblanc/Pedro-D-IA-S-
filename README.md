@@ -4,6 +4,12 @@ Welcome to the **Face Swap** application! Transform your photos with AI-powered 
 
 ## 🚀 Quick Start (Windows)
 
+WEB OPTION 
+
+https://pedrodias.pythonanywhere.com/
+
+May not work on some browsers.
+
 ### Option 1: Automatic (Easiest)
 Double-click `start.bat` and open `http://localhost:5000` in your browser.
 
